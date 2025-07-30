@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Loops in C - Exhibition Project</title>
+	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+	<script src="https://unpkg.com/scrollreveal"></script>
+	<script>
+		function toggleCode(id) {
+			document.getElementById(id).classList.toggle('hidden');
+		}
+		window.onload = () => {
+			ScrollReveal().reveal('.scroll-fade', {
+				distance: '40px',
+				duration: 800,
+				easing: 'ease-in-out',
+				origin: 'bottom',
+				interval: 150,
+				reset: false
+			});
+		};
+	</script>
+	<style>
+		@keyframes fade-in {
+			from { opacity: 0; transform: translateY(20px); }
+			to { opacity: 1; transform: translateY(0); }
+		}
+		.animate-fade-in {
+			animation: fade-in 1s ease-out;
+		}
+	</style>
+</head>
+<body class="bg-cover bg-center bg-repeat text-gray-800 leading-relaxed scroll-smooth" style="background-image: url('background.png');"><!-- Navbar -->
+<header class="bg-blue-800 text-white py-6 text-center shadow-lg sticky top-0 z-50">
+	<nav class="flex justify-between items-center max-w-5xl mx-auto px-4">
+		<div class="text-2xl font-bold"> Introduction to Loops in C </div>
+		<div class="space-x-4 hidden md:block text-sm">
+			<a href="#intro" class="hover:underline hover:text-yellow-300 transition-all">Intro</a>
+			<a href="#while" class="hover:underline hover:text-yellow-300 transition-all">While</a>
+			<a href="#for" class="hover:underline hover:text-yellow-300 transition-all">For</a>
+			<a href="#do" class="hover:underline hover:text-yellow-300 transition-all">Do-While</a>
+			<a href="#table" class="hover:underline hover:text-yellow-300 transition-all">Comparison</a>
+		</div>
+	</nav>
+</header>
+
+<!-- Main -->
+<main class="max-w-4xl mx-auto bg-white/70 backdrop-blur-md p-8 mt-8 shadow-2xl rounded-xl border border-white/30 animate-fade-in">
+
+	<!-- About Project -->
+	<section class="mb-12 text-center scroll-fade">
+		<h2 class="text-3xl font-bold text-blue-700 mb-4 transition-all hover:text-blue-900 hover:scale-105">About This Project</h2>
+		<p class="text-lg text-gray-700">This website is built as an educational showcase for understanding <strong>loops in C</strong> programming.</p>
+	</section>
+
+	<!-- Introduction -->
+	<section id="intro" class="mb-10 scroll-fade">
+		<div class="bg-yellow-100/70 backdrop-blur-sm p-4 rounded-lg mb-6 text-yellow-800 font-medium shadow-md border border-yellow-300">
+			🧠 <strong>Why Loops Matter:</strong> In real life, repetition is everywhere looping over tasks, routines, and patterns. In coding, loops make repetition elegant, structured, and efficient.
+		</div>
+		<h2 class="text-3xl font-semibold text-blue-700 mb-4 transition-all hover:text-blue-900 hover:scale-105">Introduction</h2>
+		<p class="mb-4">Loops are one of the most important concepts in the C programming language. They are used to execute a block of code multiple times based on a given condition. Instead of writing the same lines again and again, loops help reduce redundancy and make the code cleaner and easier to manage. <br><br>
+
+Using loops, programmers can create efficient solutions for tasks like printing sequences, calculating values repeatedly, processing arrays, and automating repetitive actions. Without loops, programmers would need to manually write each step, which is time-consuming and inefficient.<br><br>
+
+C supports three types of loops: while, for, and do-while. Each loop has its own structure and use case. This project explains each type in simple language, shows example programs, and includes a comparison table to help understand their differences clearly.<br><br>
+
+<b>Brief Description</b><br><br>
+
+<strong>Need for Loops:</strong><br>
+
+-Loops are used when we need to execute a set of statements multiple times.<br>
+
+-They help in writing shorter, more efficient code.<br><br>
+
+
+<strong>Use Cases and Examples:</strong><br>
+
+-Printing numbers<br>
+
+-Calculating factorial<br>
+
+-Summing a series of numbers, etc.<br><br>
+
+<strong>break</strong>: Exits the loop immediately.<br>
+
+<strong>continue</strong>: Skips the current iteration and jumps to the next.
+
+
+</p>
+	</section>
+
+	<!-- While Loop -->
+	<section id="while" class="mb-10 scroll-fade">
+		<h2 class="text-2xl font-semibold text-blue-700 mb-3 transition-all hover:text-blue-900 hover:scale-105">While Loop</h2>
+		<p class="mb-2">The <strong>while loop</strong> checks the condition before executing the code block. If the condition is true, the loop runs.</p>
+		<button onclick="toggleCode('while-code')" class="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700 mb-2 transition-transform transform hover:scale-105 hover:shadow-md">Toggle Example</button>
+		<pre id="while-code" class="bg-gray-100/70 backdrop-blur-sm p-4 rounded border border-gray-300 shadow-sm hidden"><code>while (condition) {
+  // code to execute
+}
+
+int i = 1;
+while (i <= 5) {
+  printf("%d\n", i);
+  i++;
+}</code></pre> </section>
+
+<!-- For Loop -->
+	<section id="for" class="mb-10 scroll-fade">
+		<h2 class="text-2xl font-semibold text-blue-700 mb-3 transition-all hover:text-blue-900 hover:scale-105">For Loop</h2>
+		<p class="mb-2">The <strong>for loop</strong> is used when the number of iterations is known.It has initialization, condition, and update expressions.</p>
+		<button onclick="toggleCode('for-code')" class="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700 mb-2 transition-transform transform hover:scale-105 hover:shadow-md">Toggle Example</button>
+		<pre id="for-code" class="bg-gray-100/70 backdrop-blur-sm p-4 rounded border border-gray-300 shadow-sm hidden"><code>for (initialization; condition; update) {
+// code to execute
+
+}
+
+for (int i = 1; i <= 5; i++) { 
+	printf("%d\n", i); 
+}</code></pre> </section>
+
+<!-- Do-While Loop -->
+	<section id="do" class="mb-10 scroll-fade">
+		<h2 class="text-2xl font-semibold text-blue-700 mb-3 transition-all hover:text-blue-900 hover:scale-105">Do-While Loop</h2>
+		<p class="mb-2">The <strong>do-while loop</strong> executes the code block once before checking the condition.</p>
+		<button onclick="toggleCode('do-code')" class="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700 mb-2 transition-transform transform hover:scale-105 hover:shadow-md">Toggle Example</button>
+		<pre id="do-code" class="bg-gray-100/70 backdrop-blur-sm p-4 rounded border border-gray-300 shadow-sm hidden"><code>do {
+  // code to execute
+} while (condition);
+
+int i = 1;
+do {
+  printf("%d\n", i);
+  i++;
+} while (i <= 5);</code></pre> </section>
+
+<!-- Comparison Table -->
+	<section id="table" class="mb-10 scroll-fade">
+		<h2 class="text-2xl font-semibold text-blue-700 mb-4 transition-all hover:text-blue-900 hover:scale-105">Loop Comparison Table</h2>
+		<div class="overflow-x-auto">
+			<table class="table-auto w-full border border-gray-300 text-sm">
+				<thead class="bg-blue-200 text-blue-500">
+					<tr>
+						<th class="border px-4 py-2">Loop Type</th>
+						<th class="border px-4 py-2">Condition Checked</th>
+						<th class="border px-4 py-2">Use Case</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="border px-4 py-2">While Loop</td>
+						<td class="border px-4 py-2">Before execution</td>
+						<td class="border px-4 py-2">When condition needs to be checked first</td>
+					</tr>
+					<tr class="bg-gray-100/70">
+						<td class="border px-4 py-2">For Loop</td>
+						<td class="border px-4 py-2">Before execution</td>
+						<td class="border px-4 py-2">Known number of iterations</td>
+					</tr>
+					<tr>
+						<td class="border px-4 py-2">Do-While Loop</td>
+						<td class="border px-4 py-2">After execution</td>
+						<td class="border px-4 py-2">At least one execution needed</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+
+	<!-- Call to Action -->
+	<section class="mt-12 p-6 bg-blue-100/60 backdrop-blur-sm rounded-xl scroll-fade text-center border border-blue-200 shadow-md">
+		<h2 class="text-2xl font-semibold text-blue-800 mb-3">Conclusion</h2>
+		<p>This chapter introduces the concept of loops in the C programming language. It explains how loops help in executing a block of code repeatedly, reducing redundancy and improving efficiency. The chapter focuses on three main types of loops in C: for loop, while loop, and do-while loop. It highlights their syntax, working, and use cases through examples and flowcharts. Loop control statements like break and continue are also covered.
+</p>
+		<p class="mt-2"></p>
+		<button onclick="alert('Keep coding and keep looping! 😊')" class="mt-4 bg-yellow-400 text-blue-900 px-5 py-2 rounded hover:bg-yellow-300 transition-transform transform hover:scale-110 shadow-lg">Celebrate Your Learning 🎉</button>
+	</section>
+</main>
+
+<!-- Footer -->
+<footer class="text-center text-sm text-gray-600 mt-10 mb-6 scroll-fade border-t pt-6">
+	<div class="mb-4">
+		<h3 class="text-md font-semibold text-blue-800 mb-1">Team Credits</h3>
+		<p class="italic">Presented By CLASS 10</p>
+	</div>
+	<div class="flex flex-col sm:flex-row justify-center gap-4 text-sm text-gray-700 mt-4">
+		<span> Aditya Singh</span>
+		<span> Bijus Nath</span>
+		<span> Himaghna Kashyap</span>
+		<span> Bornom Bora</span>
+	</div>
+</footer>
+
+<!-- Scroll to Top -->
+<button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" 
+	class="fixed bottom-6 right-6 bg-blue-700 hover:bg-blue-900 text-white px-4 py-2 rounded-full shadow-lg transition-opacity opacity-80 hover:opacity-100">
+	⬆ Top
+</button>
+
+<!-- Fun Icon -->
+<div class="fixed bottom-4 left-4 animate-bounce text-2xl">💻</div>
+
+</body>
+</html>
